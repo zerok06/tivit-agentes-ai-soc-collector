@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "squad-ia-latam",
+  "private_key_id": "f344bd478aac8ae2a4a0cd147885672c8a85bca8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDbHX5AFxWXGKu9\nWJtJIbIN7zIHQMUFAdrqPnJRg2sZeX2Ku2uGN13ktpNkmfSvniAlN6Ieb65hxCx6\nM1ZD5VHUlxVl/YL+QwINRUWCW2p5e8BElOf2FgquQbseG8+NgzXCJhfRyiWaTSc/\naM7+EgZFZQL+NpBCilXgHscTyoJ1mACptk+dpErj4Ya6P2U7CNt+C5QpZ7ihnml+\ncAzwaalOzfbP6cQe6Txy03JV16Z/u89C+BBwcgkTWQhqReUZMW7ZKlSZ0z1XqIZE\nUqm3Qknpxh8IcahqG78s+Ii2SKMLENmhkI5fCv89sX6eVAQ7unMW5HDDj1goBdcx\ni6fuiBczAgMBAAECggEAGXrbhI5qp1BqIDGelSmC8BXhpnBEuOlXUKgEWTBEEwlK\nrQhQX6Ium/sTNr6kcoubx1gp1Qo9qAbM+UThAjI3itYq2dpaEkEuiuaER71jq07V\ns+Pw+W/kvBDOtpibUSRx6urNGEs+hiv0pW4FrAviiM1PRMqJigNWKyLJGacR9qSI\nQm5aYbnE6FOn2VRyY1ybikYILF49RtMy83gfiHyoQ3OvW2K2dkfBE2gFbIFcQrwQ\ndFFCDEqSws90TEQJAgj6dV0n7ksm/Zdr7xODLna+QPyBnwcLYH9Go1Hx6QvtqIr8\n5hN2qtoGb8mmw3iMxGoDQrpRAuyqS92/EH4jR7rT8QKBgQD4NZ3dd5pJHiZ4wO7G\nZvyubys5Um+MNEiTi+6a/2vbn/kLMma+EXKydxErmcHzmdlzq3Q+0fo1nYUCMDcs\nrYV9mf3W/kS3re5YT/acW3WnVMS5PLC2SFEZdyZhb0432u2oJdUs/8FylWn81xme\nuBF9v3RWmrzJ/Jtrc9OGhoFQSwKBgQDh/hoZIPYzSGp2gsLOmgkOKHQs8MD2EvVe\naBtLKAqTmYlYnfI3XW/XpC7Q2EZyomv5sZdshiken/pqZ91uwJdVkqC0/Bh48MJb\nsHTVfzUL7wnXnoRvJBZkL99Y28KIVFxidRovE0fCaOxJrS8rRJ3IihMHeXx8nfX+\n1GuVVa6TuQKBgQDnCLE61fssl/3jZGJdFruYei3Xm13tOTVc8WFVsO5qbctYmr97\np64FZEL9PI+F+eyoeC0p1DV79nU6Bjs1QQcCVHYsylyYRDOYzEWWYKNw77x1V4J9\nCW9Drt5wzzQVVZjlbOGykxUzXNRc3rMgQ+E0FSNrAXk84f6g1B1OGKEBZQKBgGCI\nQ+mb9M5vDlrU/BV4IooTqZxQsnvqGTlcStxNnEbz/IEH5qDTnqSEEyNOXrk0u96K\nh13p6MKWH0c4WpOmXH5HBbKJRILUhJDZzO4tSiFw18lsgrFevtnIwSSZqnzFXDkK\nQEb/e1WFr/jAqzdWNfelUv+MWyp35s4VOmctlEaxAoGAXyb9cO1ac2xNPLSTXGXV\nqL99nO0RGbssGTlcM7hywtU8plUIxV0aIST9gws9fLbk4oJHGxbmu32Z/Bq+R+4a\nor0tectN4hK+7arzvBi3SeFMA+FEVoTtn4FOGpZcFEVrUJW8BXGZ9HK/i2qiydVu\nDfhB5mdIHArSJ2x2Q+DqocA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "cu005-agentes-ai-soc@squad-ia-latam.iam.gserviceaccount.com",
+  "client_id": "101543507627494777422",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cu005-agentes-ai-soc%40squad-ia-latam.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

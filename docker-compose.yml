@@ -1,0 +1,15 @@
+services:
+  collector:
+    build: .
+    container_name: soc-email-collector
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+      - ./credenciales.json:/app/credenciales.json:ro
+    env_file:
+      - .env
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
