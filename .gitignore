@@ -1,0 +1,48 @@
+# Entornos / Variables Mágicas
+
+# Credenciales de Google API (OAuth)
+token.json
+
+# Base de datos local (SQLite) y datos persistentes
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+app.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Entornos Virtuales
+venv/
+.venv/
+env/
+.env_venv/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+.DS_Store

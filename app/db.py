@@ -48,7 +48,12 @@ def cleanup_old_data(days=7):
     try:
         with get_connection() as conn:
             conn.execute("DELETE FROM processed_emails WHERE processed_at < datetime('now', ?)", (f'-{days} days',))
-            conn.execute("VACUUM;")
-            logger.info(f"Cleanup performed: removed data older than {days} days")
+            
+        # VACUUM must be performed outside a transaction block
+        conn = get_connection()
+        conn.isolation_level = None
+        conn.execute("VACUUM;")
+        conn.close()
+        logger.info(f"Cleanup performed: removed data older than {days} days")
     except Exception as e:
         logger.error(f"Error cleaning up database: {e}")

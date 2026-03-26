@@ -9,7 +9,7 @@ def send_to_ingestion(payload):
     
     headers = {
         "Content-Type": "application/json",
-        "X-API-Key": INGESTION_API_KEY
+        "x-api-key": INGESTION_API_KEY
     }
     
     try:
@@ -17,7 +17,7 @@ def send_to_ingestion(payload):
             INGESTION_ENDPOINT,
             json=payload,
             headers=headers,
-            timeout=5
+            timeout=30
         )
         response.raise_for_status()
         logger.info(f"Data sent successfully for ticket {payload.get('ticket_id')}")

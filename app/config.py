@@ -4,10 +4,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Gmail Configuration
-SERVICE_ACCOUNT_FILE = os.getenv("SERVICE_ACCOUNT_FILE", "credenciales.json")
-DELEGATED_USER = os.getenv("DELEGATED_USER", "jose.paye@tivit.com")
-GMAIL_QUERY = os.getenv("GMAIL_QUERY", "newer_than:7d")
+OAUTH_CREDENTIALS_FILE = os.getenv("OAUTH_CREDENTIALS_FILE", "credenciales.json")
+GMAIL_REFRESH_TOKEN = os.getenv("GMAIL_REFRESH_TOKEN", "")
+GMAIL_SENDER_FILTER = os.getenv("GMAIL_SENDER_FILTER", "jose.geeksjose@gmail.com")
+GMAIL_QUERY = os.getenv("GMAIL_QUERY", f"from:{GMAIL_SENDER_FILTER} newer_than:7d")
 POLLING_INTERVAL = int(os.getenv("POLLING_INTERVAL", "60"))
+MAX_WORKERS = int(os.getenv("MAX_WORKERS", "5"))
 
 # Database Configuration
 DB_PATH = os.getenv("DB_PATH", "data/collector.db")
