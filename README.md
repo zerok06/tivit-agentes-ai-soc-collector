@@ -95,13 +95,29 @@ _(Copia el `Refresh Token` que aparece en la consola y ponlo en tu `.env`)_.
 
 ### 4. Construcción y Despliegue (Producción)
 
-Dado que SQLite y las dependencias están optimizadas en Python 3.11-slim, la construcción es rápida y liviana:
+Dado que SQLite y las dependencias están optimizadas en Python 3.11-slim, la construcción es rápida y liviana.
 
+#### Opcion A: Usando Docker Compose (Recomendado)
 ```bash
-docker-compose up -d --build
+docker compose up -d --build
 ```
-
 Esto levantará el contenedor `soc-email-collector` en segundo plano.
+
+#### Opcion B: Usando Docker Nativo (GCP Container-Optimized OS)
+Si tu VPS de Google Cloud no incluye `docker compose`, puedes correrlo de forma nativa:
+```bash
+docker build -t soc-email-collector .
+
+docker run -d \
+  --name soc-email-collector \
+  --restart unless-stopped \
+  --env-file .env \
+  -v $(pwd)/data:/app/data \
+  --log-driver json-file \
+  --log-opt max-size=10m \
+  --log-opt max-file=3 \
+  soc-email-collector
+```
 
 ---
 
@@ -110,7 +126,11 @@ Esto levantará el contenedor `soc-email-collector` en segundo plano.
 **Ver los Logs Estructurados en Tiempo Real:**
 
 ```bash
-docker-compose logs -f
+# Si usaste Docker Compose:
+docker compose logs -f
+
+# Si usaste Docker Nativo:
+docker logs -f soc-email-collector
 ```
 
 **Ver el registro histórico (si se necesita acceso interno al file.log):**
@@ -122,8 +142,8 @@ docker exec -it soc-email-collector cat app.log
 **Reiniciar en caso de actualización:**
 
 ```bash
-docker-compose down
-docker-compose up -d --build
+docker compose down
+docker compose up -d --build
 ```
 
 ---
