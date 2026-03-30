@@ -2,6 +2,8 @@
 
 # Credenciales de Google API (OAuth)
 token.json
+credenciales.json
+.env
 
 # Base de datos local (SQLite) y datos persistentes
 data/
