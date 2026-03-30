@@ -13,6 +13,9 @@ def send_to_ingestion(payload):
     }
     
     try:
+        print("---------------")
+        print(payload)
+        print("---------------")
         response = requests.post(
             INGESTION_ENDPOINT,
             json=payload,
