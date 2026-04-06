@@ -188,7 +188,15 @@ def _extract_from_description(descripcion_raw):
 
     # Rule Name (multiline seguro)
     m = re.search(r"(?m)^Rule Name:\s*(.+)$", desc)
-    result["rule_name"] = _first(m)
+    raw_rule_name = _first(m)
+    # Post-proceso: split por " - ", descartar los dos primeros elementos
+    # (dominio y severidad), el resto es el nombre real de la regla.
+    # Ej: "MASISA - High - CSIRT_Chile_Tivit_Phishing" -> "CSIRT_Chile_Tivit_Phishing"
+    if raw_rule_name:
+        parts = [p.strip() for p in raw_rule_name.split("-")]
+        result["rule_name"] = " - ".join(parts[2:]).strip() if len(parts) > 2 else raw_rule_name
+    else:
+        result["rule_name"] = None
 
     # Source IP (patron estricto - evita [.\d]+ demasiado permisivo)
     m = re.search(
@@ -321,20 +329,19 @@ def parse_incident_email(message_details):
         final_payload = desc_fields["payload"] or descripcion_raw or raw_body or "N/A"
 
         return {
-            "ticket_id":       ticket_id,
-            "provider":        "SensrIT",
-            "domain":          domain,
-            "severity":        severity,
-            "subject":         clean_subject,
-            "requester":       _clean(blocks.get("Solicitante")),
-            "category":        _clean(blocks.get("Categor\u00eda")),
-            "subcategory":     _clean(blocks.get("Subcategor\u00eda")),
-            "third_level":     _clean(blocks.get("Tercer nivel")),
-            "rule_name":       desc_fields["rule_name"] or "N/A",
-            "source_ip":       desc_fields["source_ip"] or "N/A",
-            "destination_ip":  desc_fields["destination_ip"] or "N/A",
-            "descripcion_full": _clean(descripcion_raw) if descripcion_raw else "N/A",
-            "payload":         final_payload,
+            "ticket_id":      ticket_id,
+            "provider":       "SensrIT",
+            "domain":         domain,
+            "severity":       severity,
+            "subject":        clean_subject,
+            "requester":      _clean(blocks.get("Solicitante")),
+            "category":       _clean(blocks.get("Categor\u00eda")),
+            "subcategory":    _clean(blocks.get("Subcategor\u00eda")),
+            "third_level":    _clean(blocks.get("Tercer nivel")),
+            "rule_name":      desc_fields["rule_name"] or "N/A",
+            "source_ip":      desc_fields["source_ip"] or "N/A",
+            "destination_ip": desc_fields["destination_ip"] or "N/A",
+            "payload":        final_payload,
         }
 
     except Exception as e:

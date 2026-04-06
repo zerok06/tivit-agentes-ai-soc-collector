@@ -56,7 +56,10 @@ checks = [
     ("severity",        "HIGH"),
     ("source_ip",       "10.95.21.94"),
     ("destination_ip",  "99.84.160.69"),
-    ("rule_name",       "MASISA - High - CSIRT_Chile_Tivit_Phishing"),
+    # rule_name: "MASISA - High - CSIRT_Chile_Tivit_Phishing"
+    #   split("-") -> ["MASISA ", " High ", " CSIRT_Chile_Tivit_Phishing"]
+    #   drop 0 y 1 -> "CSIRT_Chile_Tivit_Phishing"
+    ("rule_name",       "CSIRT_Chile_Tivit_Phishing"),
 ]
 
 all_ok = True
