@@ -109,13 +109,9 @@ results.append(run_case(
     SUBJECT_1, BODY_1,
     [
         ("ticket_id",       "R176179"),
-        ("domain",          "MASISA"),
-        ("severity",        "HIGH"),
-        ("source_ip",        "10.95.21.94"),
-        ("destination_ip",   "99.84.160.69"),
-        ("rule_name",        "CSIRT_Chile_Tivit_Phishing"),
+        ("provider",        "SensrIT"),
     ],
-    payload_prefix="<190>",
+    payload_prefix="Asunto: MASISA",
 ))
 
 results.append(run_case(
@@ -123,13 +119,9 @@ results.append(run_case(
     SUBJECT_2, BODY_2,
     [
         ("ticket_id",       "R999888"),
-        ("domain",          "EMPRESA"),
-        ("severity",        "HIGH"),
-        ("source_ip",        "192.168.1.10"),
-        ("destination_ip",   "8.8.8.8"),
-        ("rule_name",        "TEST_Rule"),
+        ("provider",        "SensrIT"),
     ],
-    payload_prefix="<187>",
+    payload_prefix="Asunto: EMPRESA",
 ))
 
 results.append(run_case(
@@ -137,8 +129,7 @@ results.append(run_case(
     SUBJECT_3, BODY_3,
     [
         ("ticket_id",       "R111222"),
-        ("domain",          "CORP"),
-        ("severity",        "MEDIUM"),
+        ("provider",        "SensrIT"),
     ],
 ))
 
